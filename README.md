@@ -1,16 +1,46 @@
-# React + Vite
+#  Chef BPSD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Chef Claude AI is a React + Ollama powered AI recipe generator that creates recipes from ingredients entered by the user.
 
-Currently, two official plugins are available:
+The project uses:
+- React
+- Vite
+- HTML
+- CSS
+- Javascript
+- Ollama
+- Local LLMs (Llama3 / Qwen / Phi3)
+- Markdown rendering
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Unlike cloud AI apps, this project runs completely locally using Ollama, meaning:
+- no API limits
+- no billing
+- no internet dependency after setup
+- full privacy
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+#  Features
 
-## Expanding the ESLint configuration
+- Add ingredients dynamically
+- AI-generated recipes
+- Local AI inference with Ollama
+- Markdown formatted recipe rendering
+- Fast React UI
+- Fully offline support
+- No paid APIs required
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+#  AI Models Used
+
+The project supports local Ollama models such as:
+
+- llama3
+- qwen2.5:3b
+- phi3:mini
+
+Recommended model:
+
+```bash
+ollama pull qwen2.5:3b
