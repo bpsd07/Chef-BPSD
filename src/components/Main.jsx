@@ -6,6 +6,12 @@ export default function Main() {
     const [ingredients,setNewlist] = React.useState([]);
 
     const [recipe, setRecipe] = React.useState("");
+    const recipeSection = React.useRef(null);
+    React.useEffect(() => {
+      if (recipe !== "" && recipeSection.current !== null) {
+        recipeSection.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, [recipe]);
 
     async function getRecipe() {
           const recipeMarkdown= await getRecipeFromOllama(ingredients);
@@ -48,8 +54,10 @@ export default function Main() {
         <input type="text" id="ingredient" name="ingredient" aria-label="Add Ingredient" placeholder="e.g. Oregano" />
         <button type="submit">+ Add Ingredient</button>
       </form>
-      {ingredients.length>0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />}
-
+      {ingredients.length>0 && 
+      <IngredientsList ingredients={ingredients}
+       getRecipe={getRecipe} 
+      refSection={recipeSection} />}
       {recipe && <Recipe recipe={recipe} />}
     </main>
   );
